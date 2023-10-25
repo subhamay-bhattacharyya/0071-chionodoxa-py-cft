@@ -122,7 +122,7 @@ Metadata:
 Parameters:
   ###################################### Project Name and Environment ##############################
   ProjectName:
-    Default: Chionodoxa
+    Default: chionodoxa
     Description: "The Project Name for which the custom resource will be used."
     Type: String
     MinLength: 5
