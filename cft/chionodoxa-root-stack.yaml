@@ -322,7 +322,7 @@ Resources:
         StackName: !Ref StackName
         LambdaRuntime: !Ref LambdaRuntime
         LambdaFunctionTimeoutSecs: !Ref LambdaFunctionTimeoutSecs
-        LambdaFunctionSubmitJobBaseName: !Ref LambdaFunctionSubmitJobBaseName
+        LambdaFunctionBaseName: !Ref LambdaFunctionSubmitJobBaseName
         LambdaFunctionDescription: "Submits a AWS Batch Job"
         LambdaFunctionCodeBucket: !Ref CodeRepositoryS3Bucket
         LambdaExecutionRoleArn: !GetAtt ChionodoxaIAMExecutionRole.Outputs.LambdaExecutionRoleArn
@@ -348,7 +348,7 @@ Resources:
         StackName: !Ref StackName
         LambdaRuntime: !Ref LambdaRuntime
         LambdaFunctionTimeoutSecs: !Ref LambdaFunctionTimeoutSecs
-        LambdaFunctionGetJobStatusBaseName: !Ref LambdaFunctionGetJobStatusBaseName
+        LambdaFunctionBaseName: !Ref LambdaFunctionGetJobStatusBaseName
         LambdaFunctionDescription: "Gets the status of the AWS Batch Job"
         LambdaFunctionCodeBucket: !Ref CodeRepositoryS3Bucket
         LambdaExecutionRoleArn: !GetAtt ChionodoxaIAMExecutionRole.Outputs.LambdaExecutionRoleArn
@@ -374,7 +374,7 @@ Resources:
         StackName: !Ref StackName
         LambdaRuntime: !Ref LambdaRuntime
         LambdaFunctionTimeoutSecs: !Ref LambdaFunctionTimeoutSecs
-        LambdaFunctionGetFinalJobStatusBaseName: !Ref LambdaFunctionGetFinalJobStatusBaseName
+        LambdaFunctionBaseName: !Ref LambdaFunctionGetFinalJobStatusBaseName
         LambdaFunctionDescription: "Gets the status of the AWS Batch Job"
         LambdaFunctionCodeBucket: !Ref CodeRepositoryS3Bucket
         LambdaExecutionRoleArn: !GetAtt ChionodoxaIAMExecutionRole.Outputs.LambdaExecutionRoleArn

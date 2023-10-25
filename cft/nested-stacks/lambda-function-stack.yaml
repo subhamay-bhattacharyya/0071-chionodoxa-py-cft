@@ -43,16 +43,6 @@ Metadata:
       - LambdaFunctionBaseName
       - LambdaFunctionDescription
       - LambdaReservedConcurrency
-    #################################### DynamoDB Table ############################################
-    - Label:
-        default: "DynamoDB Table:"
-      Parameters: 
-      - DynamoDBTableBaseName
-    #################################### SQS Queue #################################################
-    - Label: 
-        default: "SQS Queue:"
-      Parameters:
-      - SQSQueueURL
     ParameterLabels:
       ################################## Project Name and Environment ##############################
       ProjectName:
@@ -94,12 +84,6 @@ Metadata:
         default: "Lambda Function Description." 
       LambdaReservedConcurrency:
         default: "Lambda Reserved Concurrency."
-      ################################## DynamoDB Table ############################################
-      DynamoDBTableBaseName: 
-        default: "Target DynamoDB Table:"
-      ################################## SQS Queue #################################################
-      SQSQueueURL:
-        default: "SQS Queue URL:"
 Parameters:
   ###################################### Project Name and Environment ##############################
   ProjectName:
@@ -217,30 +201,6 @@ Parameters:
     Type: Number
     MinValue: 0
     MaxValue: 5
-  ###################################### DynamoDB Table ############################################
-  DynamoDBTableBaseName:
-    Default: dynamodb-table
-    Description: "The Name Of The Dynamodb Table Used For Iterating Using Step Function Map State."
-    Type: String
-    MinLength: 10
-    MaxLength: 40
-    AllowedPattern: "[a-z][a-z0-9-]*"
-    ConstraintDescription: "The length should be between 10 and 40, must contain only lowercase letter, number, dash and should start with a letter."
-  ###################################### SQS Queue #################################################
-  SQSQueueURL:
-    Default: "https://sqs.us-east-1.amazonaws.com/123456789012/queue-name-devl-us-east-1"
-    Description: "The URL Of The SQS Queue Used To Store The Failed Events."
-    Type: String
-    MinLength: 10
-    MaxLength: 300
-    ConstraintDescription: "The length should be between 10 and 40, must contain only lowercase letter, number, dash and should start with a letter."
-  SQSDeadLetterQueueURL:
-    Default: "https://sqs.us-east-1.amazonaws.com/123456789012/queue-name-devl-us-east-1"
-    Description: "The URL Of The Dead Letter SQS Queue Used To Park The Error Failure Events for Support team to probe."
-    Type: String
-    MinLength: 10
-    MaxLength: 300
-    ConstraintDescription: "The length should be between 10 and 40, must contain only lowercase letter, number, dash and should start with a letter."
 Resources:
   ###################################### Lambda Function Log Group #################################
   LambdaFunctionLogGroup:
@@ -285,12 +245,6 @@ Resources:
       ReservedConcurrentExecutions: !Ref LambdaReservedConcurrency
       TracingConfig:
         Mode: Active
-      Environment:
-        Variables:
-          DYNAMODB_TABLE_NAME: !Sub '${ProjectName}-${DynamoDBTableBaseName}-${Environment}-${AWS::Region}${CiBuild}'
-          DYNAMODB_TABLE_NAME_1: "dummy"
-          SQS_QUEUE_URL: !Ref SQSQueueURL
-          DEAD_LETTER_QUEUE_URL: !Ref SQSDeadLetterQueueURL
       Tags: 
         - Key: ProjectName
           Value: !Ref ProjectName
