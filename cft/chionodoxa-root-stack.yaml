@@ -48,7 +48,6 @@ Metadata:
     - Label: 
         default: "KMS Configuration:"
       Parameters: 
-        - KmsMasterKeyAlias
         - KmsMasterKeyId
     #################################### Lambda Function ###########################################
     - Label: 
@@ -91,8 +90,6 @@ Metadata:
       CodeRepositoryS3Bucket:
         default: "Code Repository S3 Bucket."
       ################################## KMS Key ###################################################
-      KmsMasterKeyAlias:
-        default: "KMS Key alias."
       KmsMasterKeyId:
         default: "KMS Key Id."
       ################################## Lambda Function ###########################################
@@ -145,13 +142,6 @@ Parameters:
     AllowedPattern: "[a-z][a-z0-9-.]*"
     ConstraintDescription: "The length should be between 3 and 63, must contain only lowercase letter,numbers,dash, dot and should start with a letter."
   ###################################### KMS Key ###################################################
-  KmsMasterKeyAlias:
-    Default: "SB-KMS"
-    Type: String
-    MinLength: 5
-    MaxLength: 20
-    AllowedPattern: "[a-zA-Z0-9-]*"
-    ConstraintDescription: "The length of the KMS Key Alias should be beteen 5 and 20 and can only contain lowercase alphanumeric characters and dash."
   KmsMasterKeyId:
     Default: 'arn:aws:kms:us-east-1:237376087602:key/f7eb118d-f1d2-4d70-a046-dfada470840e'
     Description: "The KMS Key Id Used For Encryption."
