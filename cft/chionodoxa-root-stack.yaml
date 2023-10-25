@@ -178,7 +178,7 @@ Parameters:
     Description: "The sha value of the last commit"
     Type: String
   GitHubRepository:
-    Default: repo-name
+    Default: repository-name
     Description: "The GitHub Repository name."
     Type: String
     MinLength: 10
