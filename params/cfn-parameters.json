@@ -1,8 +1,8 @@
 {
-    "stack-prefix": "test",
+    "stack-prefix": "root",
     "stack-suffix": "stack",
-    "template-path": "/cft/sample-cft.yaml",
-    "project-name": "template",
+    "template-path": "/cft/chionodoxa-root-stack.yaml",
+    "project-name": "chionodoxa",
     "parameters": {
         "devl": [
             {
