@@ -375,7 +375,7 @@ Resources:
         LambdaRuntime: !Ref LambdaRuntime
         LambdaFunctionTimeoutSecs: !Ref LambdaFunctionTimeoutSecs
         LambdaFunctionBaseName: !Ref LambdaFunctionGetFinalJobStatusBaseName
-        LambdaFunctionDescription: "Gets the status of the AWS Batch Job"
+        LambdaFunctionDescription: "Gets the final status of the AWS Batch Job"
         LambdaFunctionCodeBucket: !Ref CodeRepositoryS3Bucket
         LambdaExecutionRoleArn: !GetAtt ChionodoxaIAMExecutionRole.Outputs.LambdaExecutionRoleArn
         LambdaReservedConcurrency: !Ref LambdaReservedConcurrency
