@@ -413,9 +413,9 @@ Resources:
         Level: ALL
         IncludeExecutionData: false
       DefinitionSubstitutions:
-        ChionodoxaSubmitJobLambdaFunction: !GetAtt ChionodoxaSubmitJobLambdaFunction.Outputs.LambdaFunctionArn
-        ChionodoxaGetJobStatusLambdaFunction: !GetAtt ChionodoxaGetJobStatusLambdaFunction.Outputs.LambdaFunctionArn
-        ChionodoxaGetFinalJobStatusLambdaFunction: !GetAtt ChionodoxaGetFinalJobStatusLambdaFunction.Outputs.LambdaFunctionArn
+        ChionodoxaSubmitJobLambdaFunctionArn: !GetAtt ChionodoxaSubmitJobLambdaFunction.Outputs.LambdaFunctionArn
+        ChionodoxaGetJobStatusLambdaFunctionArn: !GetAtt ChionodoxaGetJobStatusLambdaFunction.Outputs.LambdaFunctionArn
+        ChionodoxaGetFinalJobStatusLambdaFunctionArn: !GetAtt ChionodoxaGetFinalJobStatusLambdaFunction.Outputs.LambdaFunctionArn
       RoleArn: !GetAtt ChionodoxaIAMExecutionRole.Outputs.StepFunctionExecutionRoleArn
       Tags: 
         - Key: ProjectName
